@@ -9,9 +9,9 @@ SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 # リポジトリの絶対パスを取得
 WS_DIR="$(cd "$(dirname $SCRIPT_DIR)" && pwd)"
 # 使用するDockerイメージ名
-IMAGE_NAME="nedo_ros"
+IMAGE_NAME="ros_base"
 # コンテナの名前（ユニークに設定）
-CONTAINER_NAME="nedo_ros_container"
+CONTAINER_NAME="ros_base_container"
 
 # 自動検出するデバイスパターン
 DEVICE_PATTERNS=(
@@ -35,7 +35,7 @@ RUNNING_CONTAINER=$(docker ps --filter "name=$CONTAINER_NAME" --format "{{.ID}}"
 if [ -z "$RUNNING_CONTAINER" ]; then
     # コンテナが起動していない場合、新しいコンテナを起動
     echo "No running container found. Starting a new container..."
-    sudo docker run -it --rm --net=host --ipc=host --shm-size=10gb -v "$WS_DIR:/root/NEDO_ROS" \
+    sudo docker run -it --rm --net=host --ipc=host --shm-size=10gb -v "$WS_DIR:/root/ROS_BASE" \
         --env="DISPLAY=$DISPLAY" \
         --volume="${XAUTHORITY}:/root/.Xauthority" \
         --privileged=true \
