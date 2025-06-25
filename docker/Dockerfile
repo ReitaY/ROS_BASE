@@ -18,4 +18,4 @@ COPY ./scripts/install_pkgs.sh /usr/local/bin/install_pkgs.sh
 RUN chmod +x /usr/local/bin/install_pkgs.sh
 RUN . /usr/local/bin/install_pkgs.sh
 
-WORKDIR /root/NEDO_ROS
+WORKDIR /root/ROS_BASE
