@@ -5,5 +5,6 @@ SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 WS_DIR="$(cd "$(dirname $SCRIPT_DIR)" && pwd)"
 cd $WS_DIR/ros_ws
 rm -rf build install log
-colcon build 
+colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release
+source install/setup.bash
 cd $WS_DIR/scripts
