@@ -5,7 +5,7 @@ log/
 bags/*
 !bags/.gitkeep
 third_party/*
-ros_ws/src/*
-!ros_ws/src/.gitkeep
+ros_ws/*
+!ros_ws/.gitkeep
 !third_party/.gitkeep
 !third_party/src/.gitkeep
